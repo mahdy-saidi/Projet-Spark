@@ -12,9 +12,7 @@ The objective is twofold:
 
 All steps are implemented in a single notebook.
 
----
-
-## Data Sources
+## Data sources
 
 The datasets are downloaded from prepared CSV files hosted on GitHub, originating from the
 official French gas price open data portal.
@@ -24,8 +22,6 @@ Data includes:
 - Gas station metadata
 - Services metadata
 
----
-
 ## Setup
 
 ### Creating a virtual environment
@@ -34,9 +30,8 @@ Create a virtual environment in the project root:
 
 ```bash
 python -m venv venv
-
+```
 Activate it:
-
 * Linux / macOS
 ```bash
 source venv/bin/activate
@@ -49,34 +44,34 @@ venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
-### Create a Jupyter Kernel
+### Create a Jupyter kernel
 After activating the virtual environment, create a new Jupyter kernel so the notebook can use the correct environment:
 ```bash
-python -m ipykernel install --user --name=french-gas-env --display-name "Python (French Gas)"
+python -m ipykernel install --user --name=spark-env --display-name "Python (Spark)"
 ```
-Here, `french-gas-env` is the internal kernel name, and `Python (French Gas)` is the display name in Jupyter.
+Here, `spark-env` is the internal kernel name, and `Python (Spark)` is the display name in Jupyter.
 
-### Configuration File
+### Configuration file
 
 The project is fully parameterized using a YAML configuration file.
 Default `config.yaml`:
 ```bash
-download_directory: "data"
+download_directory: "./data"
 start_year: 2022
 end_year: 2024
-github_base_url: "https://raw.githubusercontent.com/etalab/prix-carburants/master/archives"
+github_base_url: "https://raw.githubusercontent.com/rvm-courses/GasPrices/master"
 ```
 You can modify this file to:
 * Include more data
 * Change the download directory
 
-### Running the Project
+### Running the project
 
-Start Jupyter Notebook:
+Start Jupyter notebook:
 ```bash
 jupyter notebook
 ```
-Then select the kernel "Python (French Gas)" and open:
+Then select the kernel `Python (Spark)` and open:
 ```bash
 notebook.ipynb
 ```
